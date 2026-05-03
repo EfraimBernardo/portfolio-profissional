@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfólio Profissional</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body class="">
+
+          <!-- HEADER -->
+          <header class="mainHead">
+          <div class="logo">DEBY 007</div>
+          <nav class="menu">
+               <a href="#">Home</a>
+               <a href="#projetos" onclick="projects()">Projetos</a>
+               <a href="#contato">Contato</a>
+               <span class="modo" onclick="modo()">🌙</span>
+          </nav>
+          </header>
+
+          <!-- MAIN -->
+          <main>
+
+
+          <div class="message" id="message">
+               <div class="campo">
+                <header class="messHead">
+                    <h1>Send a Message</h1>
+                </header>
+                    <form id="form">
+                        <input type="text" placeholder="Your Name..." id="name" required="">
+                        <input type="email" placeholder="Your E-mail..." id="email" required="">
+                        <input type="text" placeholder="Send a message..." id="message" required="">
+                        <button type="button" id="sendBtn">Send</button>
+                    </form>
+               </div>
+          </div>
+          <section class="principal">
+
+               <h2 class="intro">&gt; Hey, my name is</h2>
+               <nav class="nv"><nav><h1 class="nome">EFRAIM JOÃO MANUEL BERNARDO</h1></nav><img alt="efraim.jpg" src="eu.jpg"></nav>
+               <h3 class="dev">I am a  <mark>Web DEV Junior</mark></h3>
+
+               <button class="see" onclick="seeProjects()">See Projects</button>
+
+               <!-- SOBRE -->
+               <div class="sobre">
+               <h2>About me</h2>
+               <p>
+                    Hey, my name is Efraim Bernardo, and I'm a <strong>Web Developer Junior</strong>.  
+                    Welcome to my digital space!
+
+                    I'm passionate about building clean, responsive, and user-friendly websites. My journey into web development began with curiosity and turned into a deep commitment to                             learning and creating. I work mainly with HTML, CSS, JavaScript, and frameworks like React, always striving to grow and improve every day.
+
+                    This portfolio reflects my academic path, personal projects, and the skills I’ve been developing. I believe that code isn't just about functionality — it's also about                             creating experiences. Whether it’s a landing page, a portfolio, or a full web app, I aim to deliver work that is both meaningful and effective.
+
+                    Feel free to explore, check out some of my work, and don’t hesitate to reach out if you'd like to collaborate or just say hi!
+               </p>
+               </div>
+
+               <!-- PROJETOS -->
+               <div class="projetos" id="projetos">
+               <h2>Projects</h2>
+
+
+               <div class="cards">
+
+                    <div class="card">
+                    <h3>ARS</h3>
+                    <p>Anonymous Reporting System.</p>
+                    <img src="Screenshot 2025-12-10 1.36.14 AM.png" alt="Anonymous Reporting System">
+                    </div>
+
+                    <div class="card">
+                    <h3>LFMS</h3>
+                    <p>A Lost and Founds Managemant System.</p>
+                    <img src="Screenshot 2025-12-10 1.33.30 AM.png" alt="Lost and Founds Managemant System">
+                    </div>
+
+                    <div class="card">
+                    <h3>Images Downloader</h3>
+                    <p>Web Sie to Download Images</p>
+                    <img src="image.png" alt="Lost and Founds Managemant System">
+                    <a href="https://imagens-ovcq.onrender.com/" target="_blank">See Project</a>
+                    </div>
+
+
+                   <div class="card">
+                    <h3>SIS<strong>TOCKE</strong></h3>
+                    <p>Stock Manegement System</p>
+                    <img src="stoke.png" alt="Stock Manegement System">
+                    </div>
+
+
+                   <div class="card">
+                    <h3>User Cadastre</h3>
+                    <p>User Cadastre</p>
+                    <img src="user.png" alt="User Cadastre">
+                    </div>
+
+
+                   <div class="card">
+                    <h3>Contact List</h3>
+                    <p>User Cadastre</p>
+                    <img src="cont.png" alt="Contact List">
+                    </div>
+               </div>
+               </div>
+
+               <!-- CONTATO -->
+               <div class="contato" id="contato">
+               <h2>Contacts</h2>
+               <li><a href="https:/wa.me/244938134817" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+               <li><a href="https://github.com/EfraimBernardo" target="_blank"><i class="fab fa-github"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/efraim-b-150897352" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+               <div class="botoes"><br><br> 
+                    <button onclick="sendMessage()">Send me a Message</button>
+                    <button><a style="text-decoration:none; color: white;" href="https://www.linkedin.com/in/efraim-b-150897352" target="_blank">Here me</a></button>
+               </div>
+               </div>
+
+          </section>
+
+          </main>
+
+
+
+
+<script>
+     function sendMessage(){
+          const message = document.querySelector(".message");
+          message.classList.toggle("send");
+     }
+
+    function fecharMensagem(){
+        const message = document.querySelector(".message");
+        message.classList.toggle("close");
+    }
+</script>
+
+<script>
+     function modo(){
+          const bd = document.querySelector("body");
+          bd.classList.toggle("claro");
+     }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Inicializa EmailJS
+    emailjs.init("oD3WQjnViu0bn4MuP");
+
+    // Pega o botão enviar
+    const sendBtn = document.getElementById("sendBtn");
+
+    sendBtn.addEventListener("click", function(e) {
+        e.preventDefault(); // previne recarregar
+
+        // Pega os valores do formulário
+        const fromName = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
+        const replyTo = document.getElementById("email").value;
+
+        // Validação básica
+        if (!fromName || !message || !replyTo) {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        // Envia o email
+        emailjs.send("service_w2m503g", "template_o9f8er6", {
+            from_name: fromName,
+            message: message,
+            reply_to: replyTo
+        }).then(function() {
+            alert("Mensagem enviada com sucesso!");
+        }, function(error) {
+            alert("Erro ao enviar mensagem!");
+            console.log("EmailJS error:", error);
+        });
+    });
+
+});
+</script>
+</body>
+    
+</html>
