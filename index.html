@@ -24,26 +24,27 @@
           <main>
 
 
-          <div class="message" id="message">
-               <div class="campo">
-                <header class="messHead">
-                    <h1>Send a Message</h1>
-                </header>
-                    <form id="form">
-                        <input type="text" placeholder="Your Name..." id="name" required="">
-                        <input type="email" placeholder="Your E-mail..." id="email" required="">
-                        <input type="text" placeholder="Send a message..." id="message" required="">
-                        <button type="button" id="sendBtn">Send</button>
-                    </form>
-               </div>
-          </div>
+          <section class="ms">
+              <div class="message" id="message">
+                   <div class="campo">
+                    <header class="messHead">
+                        <h2>Send a Message</h2><button onclick="fecharMessage()">X</button>
+                    </header>
+                        <form id="form">
+                            <input type="text" placeholder="Your Name..." id="name" required="">
+                            <input type="email" placeholder="Your E-mail..." id="email" required="">
+                            <input type="text" placeholder="Send a message..." id="message" required="">
+                            <button type="button" id="sendBtn">Send</button>
+                        </form>
+                   </div>
+            </div>
+        </section>
           <section class="principal">
 
-               <h2 class="intro">&gt; Hey, my name is</h2>
                <nav class="nv"><nav><h1 class="nome">EFRAIM JOÃO MANUEL BERNARDO</h1></nav><img alt="efraim.jpg" src="eu.jpg"></nav>
-               <h3 class="dev">I am a  <mark>Web DEV Junior</mark></h3>
+               <h3 class="dev">I am a  <mark>Web DEV Junior </mark></h3>
 
-               <button class="see" onclick="seeProjects()">See Projects</button>
+               <a href="https://github.com/EfraimBernardo" target="_blank"><button class="see" style="background: rgb(23, 30, 40);">See Projects</button></a>
 
                <!-- SOBRE -->
                <div class="sobre">
@@ -57,8 +58,18 @@
                     This portfolio reflects my academic path, personal projects, and the skills I’ve been developing. I believe that code isn't just about functionality — it's also about                             creating experiences. Whether it’s a landing page, a portfolio, or a full web app, I aim to deliver work that is both meaningful and effective.
 
                     Feel free to explore, check out some of my work, and don’t hesitate to reach out if you'd like to collaborate or just say hi!
-               </p>
-               </div>
+               </p><br><br>
+
+              <h2>Techs</h2><br><br>
+               <div class="tech-card">
+                   <div>HTML</div>
+                   <div>CSS</div>
+                   <div>JavaScript</div>
+                   <div>NodeJS</div>
+                   <div>PostgreSQL</div>
+                   <div>.Git</div>
+                   <div>GitHub</div>
+               </div><br><br>
 
                <!-- PROJETOS -->
                <div class="projetos" id="projetos">
@@ -103,22 +114,33 @@
 
                    <div class="card">
                     <h3>Contact List</h3>
-                    <p>User Cadastre</p>
+                    <p>Contact List</p>
                     <img src="cont.png" alt="Contact List">
+                    </div>
+
+                   <div class="card">
+                    <h3>New Student Selection System</h3>
+                    <p>For Instituicion</p>
+                    <img src="ssne.png" alt="ssne">
+                    </div>
+
+                   <div class="card">
+                    <h3>Digital Wallet & Economy</h3>
+                    <p>Money Tranferences</p>
+                    <img src="sky.png" alt="ssne">
                     </div>
                </div>
                </div>
+                   <br><br>
 
                <!-- CONTATO -->
+                   <h2>Contacts</h2>
                <div class="contato" id="contato">
-               <h2>Contacts</h2>
+                   <button onclick="sendMessage()">Send me a Message</button>
+                <button><a style="text-decoration:none; color: white;" href="https://www.linkedin.com/in/efraim-b-150897352" target="_blank">Here me</a></button>
                <li><a href="https:/wa.me/244938134817" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                <li><a href="https://github.com/EfraimBernardo" target="_blank"><i class="fab fa-github"></i></a></li>
                <li><a href="https://www.linkedin.com/in/efraim-b-150897352" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-               <div class="botoes"><br><br> 
-                    <button onclick="sendMessage()">Send me a Message</button>
-                    <button><a style="text-decoration:none; color: white;" href="https://www.linkedin.com/in/efraim-b-150897352" target="_blank">Here me</a></button>
-               </div>
                </div>
 
           </section>
@@ -134,7 +156,7 @@
           message.classList.toggle("send");
      }
 
-    function fecharMensagem(){
+    function fecharMessage(){
         const message = document.querySelector(".message");
         message.classList.toggle("close");
     }
