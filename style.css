@@ -561,10 +561,44 @@ button{
     }
 }
 
+```css
+/* ==============================
+   TABLET GRANDE
+   ============================== */
+
+@media (max-width:1024px){
+
+    .mainHead{
+        padding:20px 30px;
+    }
+
+    .messHead{
+        gap:20px;
+    }
+
+    .menu{
+        gap:20px;
+    }
+
+    .principal{
+        width:100%;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* ==============================
+   TABLET
+   ============================== */
+
 @media (max-width:768px){
 
     .mainHead{
-        padding:16px 20px;
+        padding:18px 20px;
     }
 
     .messHead{
@@ -572,12 +606,7 @@ button{
         gap:15px;
     }
 
-    .logo{
-        flex-shrink:0;
-    }
-
     .menu{
-        flex:1;
         justify-content:flex-end;
         gap:15px;
     }
@@ -592,42 +621,48 @@ button{
     }
 
     .principal{
-        padding:25px;
+        padding:30px;
     }
 
     .cards{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:18px;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
     }
 
     .card{
         padding:18px;
     }
 
+    h1{
+        font-size:2.4rem;
+    }
+
+    h2{
+        font-size:1.7rem;
+    }
+
+    h3{
+        font-size:1.15rem;
+    }
+
+    .sobre p{
+        font-size:1rem;
+    }
+
     .contato{
         flex-wrap:wrap;
     }
 
-    .contato button{
-        flex:1 1 180px;
-    }
-
     .botoes{
-        gap:12px;
+        flex-wrap:wrap;
     }
 
-    .botoes button{
-        flex:1 1 180px;
-    }
-
-    .tech-card{
-        gap:8px;
-    }
-
-    .tech-card div{
-        min-width:85px;
-    }
 }
+
+
+/* ==============================
+   TELEMÓVEL
+   ============================== */
 
 @media (max-width:480px){
 
@@ -642,11 +677,14 @@ button{
 
     .logo{
         text-align:center;
+        font-size:18px;
     }
 
     .menu{
         width:100%;
+
         justify-content:center;
+
         gap:12px;
     }
 
@@ -666,30 +704,57 @@ button{
 
     h1{
         font-size:2rem;
+        line-height:1.2;
     }
 
     h2{
         font-size:1.5rem;
+        line-height:1.3;
     }
 
     h3{
         font-size:1.05rem;
+        line-height:1.4;
+    }
+
+    p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .sobre p{
+        font-size:1rem;
     }
 
     .cards{
         grid-template-columns:1fr;
+        gap:20px;
     }
 
     .card{
         padding:18px;
     }
 
+    .card p{
+        font-size:1rem;
+    }
+
     .card img{
         aspect-ratio:16/10;
     }
 
-    .message div{
-        width:95%;
+    .see{
+        font-size:1rem;
+        padding:13px 20px;
+    }
+
+    .tech-card{
+        justify-content:flex-start;
+    }
+
+    .tech-card div{
+        min-width:90px;
+        font-size:.9rem;
     }
 
     .botoes{
@@ -698,10 +763,17 @@ button{
 
     .botoes button{
         width:100%;
+        flex:1 1 auto;
+        font-size:1rem;
     }
 
-    .tech-card{
-        justify-content:center;
+    .contato{
+        flex-direction:column;
+    }
+
+    .contato button{
+        width:100%;
+        flex:1 1 auto;
     }
 
     .nv{
@@ -709,24 +781,29 @@ button{
         text-align:center;
     }
 
-    .contato{
-        flex-wrap:wrap;
+    .message{
+        padding:15px;
     }
 
-    .contato button{
+    .message div{
         width:100%;
-        flex:1 1 100%;
-    }
-
-    .contato li{
-        font-size:28px;
+        max-width:420px;
     }
 }
 
+
+/* ==============================
+   TELEMÓVEL PEQUENO
+   ============================== */
+
 @media (max-width:350px){
 
+    .mainHead{
+        padding:13px;
+    }
+
     .logo{
-        font-size:16px;
+        font-size:17px;
     }
 
     .menu{
@@ -737,28 +814,37 @@ button{
         font-size:14px;
     }
 
+    main{
+        margin-top:175px;
+        padding:10px;
+    }
+
+    .principal{
+        padding:16px;
+    }
+
     h1{
-        font-size:1.7rem;
+        font-size:1.8rem;
     }
 
     h2{
-        font-size:1.3rem;
+        font-size:1.4rem;
     }
 
     h3{
         font-size:1rem;
     }
 
-    .principal{
-        padding:15px;
+    p{
+        font-size:.95rem;
     }
 
     .card{
         padding:15px;
     }
 
-    .card img{
-        aspect-ratio:1/1;
+    .card p{
+        font-size:.95rem;
     }
 
     .tech-card div{
@@ -766,3 +852,4 @@ button{
         font-size:.85rem;
     }
 }
+```
