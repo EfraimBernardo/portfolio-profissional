@@ -59,11 +59,11 @@ body.claro .card a{
     width:100%;
 
     display:flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items:center;
-    button{
-        wisth: 10vh;
-    }
+
+    gap:30px;
+    min-width:0;
 }
 
 .logo{
@@ -73,19 +73,28 @@ body.claro .card a{
     color:#777;
 
     border-bottom:1px solid rgba(60,227,22,.9);
+
+    white-space:nowrap;
 }
 
 .menu{
     display:flex;
     align-items:center;
+    justify-content:flex-end;
+
     gap:30px;
+
     flex-wrap:wrap;
+
+    min-width:0;
 }
 
 .menu a{
     color:#777;
     text-decoration:none;
     font-size:16px;
+
+    white-space:nowrap;
 }
 
 .menu a:hover{
@@ -104,21 +113,26 @@ main{
     justify-content:center;
 
     margin-top:120px;
+
     padding:20px;
 }
 
 .principal{
     background:rgb(25,35,49);
 
-    width:min(1700px,100%);
+    width:100%;
+    max-width:1700px;
+
     padding:40px;
 
     border-radius:14px;
 
     outline:.5px solid rgba(255,255,255,.2);
+
+    min-width:0;
 }
 
-/* 🔥 CONTAINER (overlay) */
+/* MESSAGE */
 
 .message{
     position:fixed;
@@ -137,27 +151,20 @@ main{
 
     opacity:0;
     pointer-events:none;
-}
 
-/* 🔥 QUANDO ATIVO */
+    padding:20px;
+}
 
 .message.send{
     opacity:1;
     pointer-events:auto;
     z-index:9999;
 }
-/* .message.close{
-    opacity:1;
-    pointer-events:auto;
-    z-index:9999;
-} */
-
-/* 🔥 CAIXA INTERNA */
 
 .message div{
     background:rgb(23,30,40);
 
-    width:90%;
+    width:100%;
     max-width:420px;
 
     padding:25px;
@@ -169,9 +176,8 @@ main{
     gap:15px;
 }
 
-/* INPUTS */
-
 .message input{
+    width:100%;
     height:45px;
 
     border:none;
@@ -182,9 +188,8 @@ main{
     padding:10px;
 }
 
-/* BOTÃO */
-
 .message button{
+    width:100%;
     height:45px;
 
     border:none;
@@ -204,20 +209,28 @@ main{
 h1{
     font-size:clamp(2rem,5vw,3rem);
     margin-bottom:15px;
+
+    overflow-wrap:break-word;
 }
 
 h2{
     font-size:clamp(1.5rem,3vw,2rem);
+
+    overflow-wrap:break-word;
 }
 
 h3{
     color:#aaa;
     font-size:clamp(1rem,2vw,1.3rem);
     margin-bottom:20px;
+
+    overflow-wrap:break-word;
 }
 
 p{
     line-height:1.7;
+
+    overflow-wrap:break-word;
 }
 
 /* BOTAO */
@@ -236,15 +249,20 @@ p{
     cursor:pointer;
 
     margin-bottom:45px;
+
+    max-width:100%;
 }
 
 .see:hover{
     transform:translateY(-2px);
 }
+
 /* SOBRE */
 
 .sobre{
     margin-bottom:50px;
+
+    min-width:0;
 }
 
 .sobre h2{
@@ -261,6 +279,8 @@ p{
 
 .projetos{
     margin-top:20px;
+
+    min-width:0;
 }
 
 .projetos h2{
@@ -268,17 +288,16 @@ p{
 }
 
 .cards{
-
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(3,minmax(0,1fr));
 
     gap:25px;
 
+    width:100%;
 }
 
 .card{
-
     background:#1e2a38;
 
     padding:20px;
@@ -291,19 +310,19 @@ p{
 
     overflow:hidden;
 
+    min-width:0;
 }
 
 .card:hover{
-
     opacity:1;
 
     transform:translateY(-6px);
 
     box-shadow:0 10px 25px rgba(0,0,0,.35);
-
 }
 
 .card img{
+    display:block;
 
     width:100%;
 
@@ -314,43 +333,37 @@ p{
     border-radius:8px;
 
     margin-bottom:15px;
-
 }
 
 .card h3{
-
     margin-bottom:10px;
-
 }
 
 .card p{
-
     color:#aaa;
 
     margin-bottom:15px;
 
     line-height:1.7;
-
 }
 
 .card a{
-
     color:#4da6ff;
 
     text-decoration:none;
 
     font-weight:bold;
 
+    overflow-wrap:anywhere;
 }
 
 .card a:hover{
-
     text-decoration:underline;
-
 }
 
-.tech-card{
+/* TECNOLOGIAS */
 
+.tech-card{
     display:flex;
 
     flex-wrap:wrap;
@@ -359,14 +372,13 @@ p{
 
     margin-top:15px;
 
+    min-width:0;
 }
 
 .tech-card div{
-
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     min-width:90px;
@@ -380,11 +392,9 @@ p{
     outline:1px solid rgba(60,227,22,.9);
 
     font-weight:bold;
-
 }
 
 .tech-card div:hover{
-
     background:rgba(60,227,22,.9);
 
     outline:1px solid #ddd;
@@ -392,28 +402,28 @@ p{
     color:#111;
 
     cursor:default;
-    transform: translatey(-2.5px);
 
+    transform:translateY(-2.5px);
 }
 
 /* CONTATO */
 
 .contato{
-
     margin-top:60px;
+
     display:flex;
 
-    /* flex-wrap:wrap; */
+    flex-wrap:wrap;
 
     gap:15px;
 
+    min-width:0;
 }
 
 .contato h2{
-
     margin-bottom:20px;
-
 }
+
 .contato button{
     flex:1 1 180px;
 
@@ -426,18 +436,17 @@ p{
     border-radius:8px;
 
     cursor:pointer;
+
+    min-width:0;
 }
 
 button{
-
     background:rgb(23,30,40);
 
     outline:1px solid rgba(60,227,22,.9);
-
 }
 
 .botoes{
-
     display:flex;
 
     flex-wrap:wrap;
@@ -446,10 +455,10 @@ button{
 
     margin-top:20px;
 
+    width:100%;
 }
 
 .botoes button{
-
     flex:1 1 180px;
 
     color:#fff;
@@ -462,26 +471,23 @@ button{
 
     cursor:pointer;
 
+    min-width:0;
 }
 
 .botoes button:hover{
-
     background:rgba(60,227,22,.9);
 
     outline:1px solid #ddd;
 
     color:#111;
-
 }
 
 .contato li{
-
     list-style:none;
 
     display:inline-flex;
 
     justify-content:center;
-
     align-items:center;
 
     padding:10px;
@@ -489,27 +495,25 @@ button{
     font-size:clamp(26px,5vw,34px);
 
     cursor:pointer;
-
 }
 
 .nv{
-
     display:flex;
 
     justify-content:space-between;
-
     align-items:center;
 
     gap:20px;
 
     margin-bottom:20px;
 
+    min-width:0;
 }
 
 .nv img{
+    flex-shrink:0;
 
     width:60px;
-
     height:60px;
 
     border-radius:50%;
@@ -517,10 +521,113 @@ button{
     object-fit:cover;
 
     outline:1px solid rgba(60,227,22,.9);
-
 }
 
-/* 🔥 MOBILE PRIMEIRO (até 480px) */
+@media (max-width:1024px){
+
+    .mainHead{
+        padding:18px 30px;
+    }
+
+    .messHead{
+        gap:20px;
+    }
+
+    .menu{
+        gap:20px;
+    }
+
+    main{
+        margin-top:120px;
+        padding:20px;
+    }
+
+    .principal{
+        width:100%;
+        padding:30px;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:20px;
+    }
+
+    .card{
+        min-width:0;
+    }
+
+    .contato{
+        flex-wrap:wrap;
+    }
+}
+
+@media (max-width:768px){
+
+    .mainHead{
+        padding:16px 20px;
+    }
+
+    .messHead{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .logo{
+        flex-shrink:0;
+    }
+
+    .menu{
+        flex:1;
+        justify-content:flex-end;
+        gap:15px;
+    }
+
+    .menu a{
+        font-size:15px;
+    }
+
+    main{
+        margin-top:120px;
+        padding:15px;
+    }
+
+    .principal{
+        padding:25px;
+    }
+
+    .cards{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:18px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .contato{
+        flex-wrap:wrap;
+    }
+
+    .contato button{
+        flex:1 1 180px;
+    }
+
+    .botoes{
+        gap:12px;
+    }
+
+    .botoes button{
+        flex:1 1 180px;
+    }
+
+    .tech-card{
+        gap:8px;
+    }
+
+    .tech-card div{
+        min-width:85px;
+    }
+}
 
 @media (max-width:480px){
 
@@ -538,6 +645,7 @@ button{
     }
 
     .menu{
+        width:100%;
         justify-content:center;
         gap:12px;
     }
@@ -601,79 +709,19 @@ button{
         text-align:center;
     }
 
+    .contato{
+        flex-wrap:wrap;
+    }
+
+    .contato button{
+        width:100%;
+        flex:1 1 100%;
+    }
+
     .contato li{
         font-size:28px;
     }
-
 }
-
-/* TABLETS */
-
-@media (max-width:768px){
-
-    .mainHead{
-        padding:18px 20px;
-    }
-
-    .messHead{
-        flex-direction:column;
-        gap:18px;
-    }
-
-    .menu{
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    main{
-        margin-top:170px;
-    }
-
-    .principal{
-        width:95%;
-        padding:30px;
-    }
-
-    .cards{
-        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    }
-
-}
-
-/* NOTEBOOKS */
-
-@media (max-width:1024px){
-
-    .mainHead{
-        padding:20px 30px;
-    }
-
-    .principal{
-        width:95%;
-    }
-
-    .cards{
-        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    }
-
-}
-
-/* TELAS GRANDES */
-
-@media (min-width:1400px){
-
-    .principal{
-        max-width:1300px;
-    }
-
-    .cards{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-}
-
-/* TELAS MUITO PEQUENAS */
 
 @media (max-width:350px){
 
@@ -717,5 +765,4 @@ button{
         min-width:80px;
         font-size:.85rem;
     }
-
 }
